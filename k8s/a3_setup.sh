@@ -7,3 +7,4 @@ kubectl -nkube-system --selector=k8s-app=metrics-server get deploy --context kin
 
 echo starting auto scaling hpa...
 kubectl apply -f manifests/k8s/backend-hpa.yaml --context kind-kind-1
+kubectl describe hpa --context kind-kind-1
