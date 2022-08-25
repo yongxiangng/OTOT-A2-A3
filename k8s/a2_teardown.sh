@@ -1,0 +1,16 @@
+echo running stop script
+
+echo deleteing ingress...
+kubectl delete ingress backend-ingress
+
+echo deleteing ingress controller...
+kubectl delete -n ingress-nginx deploy ingress-nginx-controller
+
+echo deleting service...
+kubectl delete service backend-service
+
+echo deleteing deployment...
+kubectl delete deploy backend
+
+echo deleteing cluster...
+kind delete cluster --name kind-1
